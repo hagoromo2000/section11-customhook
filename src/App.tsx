@@ -41,11 +41,12 @@ function App() {
       ) : loading ? (
         <p>ロード中...</p>
       ) : (
-        ""
+        <>
+          {userProfiles.map((user) => (
+            <UserCard key={user.id} user={user} />
+          ))}
+        </>
       )}
-      {userProfiles.map((user) => (
-        <UserCard key={user.id} user={user} />
-      ))}
     </div>
   );
 }
